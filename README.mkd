@@ -1,0 +1,35 @@
+# myrackspace dns library
+
+Simple Ruby library to manage myrackspace dns.  Note: this is not for rackspace cloud dns -- lots of good libraries for that already.
+
+currently this just supports add for A records
+
+## Install
+
+with bundler simply add
+
+```
+gem 'myrackspacedns', :git => 'https://github.com/taylor/myrackspacedns.git'
+```
+
+then run *bundle install*
+
+
+## Usage
+
+```
+require 'myrackspacedns'
+
+mrdns = MyRackspaceDNS.new(rackspace_account, rackspace_user, rackspace_password)
+
+mrdns.login
+mrdns.add 'hostname123', 'domain_id', '127.0.0.1'
+mrdns.logout
+```
+
+## TODO
+
+ * implement add for different record types
+ * implement modify
+ * implement delete
+ * check for more validation errors
